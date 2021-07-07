@@ -1,0 +1,396 @@
+/* global */
+* {
+    transition: 0.25s;
+  }
+  
+  html, body, nav, p, div, h1, h2, h3, h4, h5, h6 img {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul {
+    margin-left: -2.3rem;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  button {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+
+    /* width: 100%; */
+  }
+  
+  body {
+    margin-top: 0;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+  }
+  
+  /* expand */
+  .expandless {
+    display: none;
+  }
+  
+  
+  /* ---------------- HEADER ---------------------- */
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-menu, .left-menu ul, .right-menu, .right-menu ul, li {
+    display: flex;
+  }
+  
+  h1 {
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+  
+    margin: auto;
+    margin-left: 2.25rem;
+  }
+  
+  h1 a:hover {
+    font-weight: 900;
+  }
+  
+  /* left menu */
+  .left-menu img {
+    width: 4.3rem;
+  }
+  
+  
+  /* right menu */
+  .right-menu img {
+    width: 2rem;
+    transform: translateY(60%);
+  }
+  
+  .menu-black {
+    display: none;
+  }
+
+  /* --------------section ADMIN---------- */
+
+.update {
+    margin: 3rem;
+    border-bottom: 3px rgba(0, 0, 0, 0.1) solid;
+    border-left: 3px rgba(0, 0, 0, 0.1) solid;
+    border-right: 3px rgba(0, 0, 0, 0.1) solid;
+}
+
+
+.title-admin {
+    margin: 0rem 1rem 0 2rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+}
+
+.title-admin img {
+    width: 2rem;
+    margin-top: -0.5rem;
+    padding-right: 1rem;
+}
+
+.title-admin a {
+    background-color: #0000001a;
+    padding: 0.25rem 0.35rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+}
+
+h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+
+.users {
+    padding: 1rem;
+    /* width: 100%; */
+    display: grid;
+
+    grid-template-columns:  repeat(6, 1fr);
+
+    text-align: center;
+    /* border: solid 1px rgba(0, 0, 0, 0.9); */
+}
+
+.users form {
+    grid-column: 1 / span 7;
+    grid-row: auto;
+    /* width: 100%; */
+    display: grid;
+
+    grid-template-columns:  repeat(6, 1fr);
+}
+
+.products {
+  padding: 1rem;
+  width: 100%;
+  display: grid;
+
+  grid-template-columns:  repeat(7, 1fr);
+
+  text-align: center;
+  /* border: solid 1px rgba(0, 0, 0, 0.9); */
+}
+
+.products form {
+  grid-column: 1 / span 8;
+  grid-row: auto;
+  width: 100%;
+  display: grid;
+
+  grid-template-columns:  repeat(7, 1fr);
+}
+
+.categories {
+  padding: 1rem;
+  /* width: 100%; */
+  display: grid;
+
+  grid-template-columns:  repeat(3, 1fr);
+
+  text-align: center;
+  /* border: solid 1px rgba(0, 0, 0, 0.9); */
+}
+
+.categories form {
+  grid-column: 1 / span 4;
+  grid-row: auto;
+  /* width: 100%; */
+  display: grid;
+
+  grid-template-columns:  repeat(3, 1fr);
+}
+
+.categories-check {
+  padding: 1rem;
+  /* width: 100%; */
+  display: grid;
+
+  grid-template-columns:  repeat(4, 1fr);
+
+  text-align: center;
+  /* border: solid 1px rgba(0, 0, 0, 0.9); */
+}
+
+.categories-check form {
+  grid-column: 1 / span 5;
+  grid-row: auto;
+  /* width: 100%; */
+  display: grid;
+
+  grid-template-columns:  repeat(4, 1fr);
+}
+
+
+.display {
+    /* white-space: nowrap; */
+
+    grid-column: auto;
+    grid-row: auto;
+
+    padding: 0.25rem 0;
+}
+
+.display p {
+    padding-top: 1rem;
+}
+
+.display input {
+
+    text-align: center;
+}
+
+.display img {
+    width: 1.5rem;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+
+}
+
+.display img:hover, .add-user a:hover {
+    border: 1px solid black;
+
+}
+
+.display a {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 2.5rem;
+  border-radius: 0.5rem;
+}
+
+.display_product img {
+  width: 1.5rem;
+  margin: 0 0.25rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+
+}
+
+.display_product img:hover, .add-user a:hover {
+  border: 1px solid black;
+  width: 100%;
+
+}
+
+.disable {
+  background-color: transparent;
+}
+
+  /* --------------section user---------- */
+  .case-connexion {
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+
+    display: block;
+
+    text-align: center;
+  }
+
+  .bienvenu h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .bienvenu, .error, .case-connexion form {
+    margin: auto;
+  }
+
+  .error {
+    background-color: #c563631a;
+    color: red;
+  }
+
+  .error {
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .grey {
+    width:96%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem 0;
+
+    color: white;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+
+  .case-connexion input {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 0.5rem 0;
+    padding: 1rem;
+    width:90%;
+
+    font-size: 1rem;
+  }  
+  
+.update-button {
+  width: 100%;
+  padding: 1rem 0;
+
+
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
+#alert {
+  display: none;
+}
+
+.display input {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.retour {
+  margin-top: -1rem;
+  padding: 0.75rem;
+  width: 10rem;
+  border: 1px solid black;
+  text-align: center;
+
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.error p {
+  padding: 0.5rem 0;
+}
+
+.error button {
+  text-transform: uppercase;
+  padding: 0.5rem;
+  background-color: white;
+
+  color: red;
+  border: 1px red solid;
+
+  margin-right: 0.5rem;
+}
+
+/* ---- footer ----- */
+footer {
+  display: flex;
+}
+
+.footer-page-number, .end-page-number {
+  /* margin: 1rem 0 2.5rem 0; */
+  display: flex;
+}
+
+.footer-page-number {
+  max-width: 80%;
+  overflow: hidden;
+}
+
+/* page number */
+.page-number {
+  padding: 0.9rem 1.1rem;
+  /* margin: 0 1.25rem 0 0; */
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.page-number a {
+  padding: 0.9rem 1.1rem;
+}

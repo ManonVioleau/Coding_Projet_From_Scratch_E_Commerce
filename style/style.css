@@ -1,0 +1,868 @@
+/* global */
+* {
+    transition: 0.25s;
+}
+
+html, body, nav, p, div, h1, h2, h3, h4, h5, h6 img {
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin-left: -2.3rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+body {
+    margin-top: 0;
+    margin-left: 3.5rem;
+    margin-right: 3.5rem;
+}
+
+/* expand */
+.expandless {
+    display: none;
+}
+
+
+/* ---------------- HEADER ---------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-menu, .left-menu ul, .right-menu, .right-menu ul, li {
+    display: flex;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+
+    margin: auto;
+    margin-left: 2.25rem;
+}
+
+h1 a:hover {
+    font-weight: 900;
+}
+
+/* left menu */
+.left-menu img {
+    width: 4.3rem;
+}
+
+
+/* right menu */
+.right-menu img {
+    width: 2rem;
+    transform: translateY(60%);
+}
+
+.menu-black {
+    display: none;
+}
+/* ---------------- SEARCH ---------------------- */
+/* --- search grid --- */
+.search-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 3rem;
+
+    margin-top: 2rem;
+}
+/* -- form -- */
+form {
+    grid-column: 1 / span 3;
+
+    display: flex;
+}
+
+/* - loupe      - */
+.loupe img {
+    padding:  0 0.5rem;
+    width: 2.75rem;
+}
+
+.loupe img:hover {
+    cursor : pointer;
+}
+/* - input flex - */
+.input-flex {
+    margin-left: 2rem;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+.input-draw {
+    position: absolute;
+    bottom: 0rem;
+
+    width:100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 1);
+}
+/* input */
+.input-text, .input-text::placeholder {
+    width:100%;
+
+    /* color: rgba(0, 0, 0, 1); */
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    /* margin: auto; */
+}
+
+/* algolia */
+.algolia {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+
+}
+
+.algolia-para {
+    white-space: nowrap;
+
+    font-size: 0.8rem;
+
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.algolia img {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 2rem;
+
+}
+/* -- best match   -- */
+.best-match {
+    grid-column: 4 / span 1;
+    position:relative;
+
+
+}
+
+.best-match-title {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.best-match:hover .subfilter {
+    display: block;
+    margin-top: 1rem;
+}
+
+.match-draw {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.7);
+
+    margin-top: 0.7rem;
+}
+
+.best-match img {
+    width: 3rem;
+}
+
+/* ---------------- SECTION ---------------------- */
+.section {
+    margin: 4rem 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 3rem;
+
+}
+/* case */
+.case {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 17rem;
+    position:relative;
+}
+
+/* case filter */
+.filter {
+    position: relative;
+}
+.case-filter {
+    grid-column: auto;
+    grid-row: auto;
+}
+
+.filters {
+    display: none;
+}
+
+.filter-by {
+    margin-bottom: 2.5rem;
+}
+
+h3 {
+    font-family: 'Nunito', sans-serif;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 0.9rem;
+}
+
+.filter {
+    display: block;
+    position: relative;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.filter-title {
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+
+    margin-bottom: 1rem;
+
+}
+
+.subfilter {
+    background-color: rgb(245, 244, 244);
+    /* border: 0.5px solid rgba(0, 0, 0); */
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 2em;
+    display: none;
+    z-index: 5000;
+}
+
+.subfilter p {
+    margin: 1rem;
+}
+
+.filter-checked form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.filter-checked form p {
+    margin: 0.5rem 0;
+    grid-column: auto;
+    grid-row: auto;
+}
+
+.subfilter li a {
+    width: 100%;
+}
+
+.subfilter li {
+    line-height: 2rem;
+    padding: 0.5rem 1rem;
+    color:rgba(0, 0, 0, 0.7)
+}
+
+.filter-title:hover .subfilter, .filter-title:hover .expandless {
+    display: block;
+}
+
+.filter-title:hover .expandmore {
+    display: none;
+}
+
+.subfilter li:hover {
+    background-color: white;
+}
+
+h4 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.7);
+
+    text-transform: capitalize;
+
+    /* margin: 1rem 0; */
+}
+
+.filter img {
+    width: 2rem;
+}
+
+.filter-draw {
+    position: absolute;
+    bottom: 0rem;
+
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-price {
+    display: block;
+    /* justify-content: space-between; */
+
+    position: relative;
+
+    min-height: 7rem;
+}
+
+.ui-slider, .ui-corner-all, .ui-slider-horizontal, .ui-widget, .ui-widget-content {
+
+    width: 100%;
+    /* height: 5px; */
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ui-state-default {
+
+
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    z-index: 3000;
+
+
+}
+
+.input-price {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto', sans-serif;
+
+    width: 100%;
+    text-align: center;
+}
+
+.check-button {
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+
+    /* font-size: 1rem; */
+
+    margin-right: 0.25rem;
+    padding: 0.25rem 0.5rem;
+}
+
+p {
+    text-transform: capitalize;
+}
+
+
+.overview {
+    background-color: rgb(243, 237, 237);
+    box-shadow:5px 5px 3px rgb(144, 141, 141);
+    padding: 2rem;
+    position: absolute;
+    display:none;
+    left: 0px;
+    bottom: 6.6em;
+    right: 0px;
+    width : 85%;
+    max-height: 100%; /* pas de height spécifiée, la div adapte sa hauteur au contenu */
+    word-wrap: break-word;
+  }
+
+  .case:hover .overview {
+    display:block;
+  }
+
+/* Applying base CSS styles */
+input[type=range] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
+  }
+  
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  
+  input[type=range]:focus {
+    outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  }
+  
+  input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+  
+    /* Hides the slider so custom styles can be added */
+    background: transparent; 
+    border-color: transparent;
+    color: transparent;
+  }
+
+  /* Styling the Thumb */
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    cursor: pointer;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    }
+  
+  /* Firefox */
+  input[type=range]::-moz-range-thumb {
+    border: 1px solid #000000;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+
+/*  IE */
+input[type=range]::-ms-thumb {
+    border: 1px solid #000000;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+
+
+
+  /* end */
+
+#input-left {
+    position: absolute;
+    bottom: 2rem;
+    width: 50%;
+
+}
+
+#input-right {
+    position: absolute;
+    bottom: 2rem;
+    right: 0;
+
+    width: 50%;
+}
+
+
+
+#filter-price-draw {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+#price-spot-min {
+    position: absolute;
+    bottom: 2rem;
+
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    z-index: 3000;
+
+}
+#price-spot-max {
+    position: absolute;
+    right: 0;
+    bottom: 2rem;
+
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: white;
+    border: solid 2px black;
+    border-radius: 50%;
+
+    z-index: 3000;
+
+
+}
+
+/* #price-min {
+
+    display: block;
+    margin: auto;
+    margin-top: 10em;
+
+}
+
+#price-max {
+
+    display: block;
+    margin: auto;
+    margin-top: 10em;
+
+} */
+
+
+#price-min {
+    position: absolute;
+    bottom: 0;
+
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.9);
+}
+#price-max {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.9);
+
+}
+
+/* case product */
+.case-image {
+    text-align: center;
+}
+
+.case-image img {
+    width: 100%;
+    border : 1px black solid; 
+}
+
+.case-description-top, .case-description-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 1rem 1.5rem;
+
+}
+
+h5 {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: 600;
+}
+
+.price {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+h6 {
+    font-size: 0.7rem;
+    margin: auto;
+    font-family: 'Nunito', sans-serif;
+    color: rgba(0, 0, 0, 0.3);
+
+    text-transform: uppercase;
+
+}
+
+.case-description-bottom img {
+    width: 2rem;
+}
+
+.stars img {
+    width: 0.75rem;
+}
+
+
+
+/* ---------------- FOOTER ---------------------- */
+footer {
+    display: flex;
+}
+
+.footer-page-number, .end-page-number {
+    margin: 1rem 0 2.5rem 0;
+    display: flex;
+}
+
+.footer-page-number {
+    max-width: 80%;
+    overflow: hidden;
+}
+
+/* page number */
+.page-number {
+    padding: 0.9rem 1.1rem;
+    /* margin: 0 1.25rem 0 0; */
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.page-number a {
+    padding: 0.9rem 1.1rem;
+}
+
+/* .input-price {
+    width: 100%;
+} */
+
+/* responsive */
+@media (min-width: 1470px) {
+
+}
+@media (max-width: 1470px) {
+    /* --- search grid --- */
+    .search-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+
+        margin-top: 2rem;
+    }
+
+    /* -- form -- */
+    form {
+        grid-column: 1 / span 2;
+    }
+    /* best match */
+    .best-match {
+        grid-column: 3 / span 1;
+    }
+
+    .section {
+        margin: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 3rem;
+    
+    }
+}
+
+@media (max-width: 1130px) {
+    /* --- search grid --- */
+    .search-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        margin-top: 2rem;
+    }
+
+    /* -- form -- */
+    form {
+        grid-column: 1 / span 2;
+    }
+    /* best match */
+    .best-match {
+        grid-column: 1 / span 2;
+    }
+
+    .section {
+        margin: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3rem;
+    
+    }
+}
+@media (max-width: 780px) {
+    body {
+        margin: 0;
+    }
+    /* header */
+    .left-menu img {
+        width: 7.5rem;
+    }
+    .left-menu ul {
+        display: none;
+    }
+
+    .menu-black {
+        display: flex;
+    }
+
+    .right-menu a img {
+        transform: translateY(50%);
+    }
+
+    .right-menu ul {
+        display: none;
+    }
+
+    .right-menu img {
+        width: 4rem;
+        margin: 0 2.5rem;
+    }
+    /* --- search grid --- */
+    .search-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        margin: 2rem 2rem 0 1rem;
+    }
+
+    /* -- form -- */
+    form {
+        grid-column: 1 / span 1;
+    }
+    /* - loupe      - */
+    .loupe img {
+        padding:  2.2rem 0.5rem 0 1rem;
+        width: 2.75rem;
+    }
+    /* input */
+    .input-text {
+        width:100%;
+    
+        /* color: red; */
+        font-size: 2.5rem;
+        font-weight: 600;
+    
+        margin: auto;
+    }
+
+    .input-text::placeholder {
+        color: white;
+    }
+
+    .input-draw {
+        position: absolute;
+        bottom: 0rem;
+    
+        width:100%;
+        height: 4px;
+        background-color: rgba(0, 0, 0, 1);
+    }
+
+    /* algolia */
+    .algolia {
+        display: none;
+    
+    }
+    /* best match */
+    .best-match {
+        grid-column: 1 / span 1;
+        margin: 2rem 0 0 1rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .best-match img {
+        width: 5rem;
+    }
+
+    /* section */
+    .section {
+        margin: 1rem 2rem;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    
+    }
+
+    /* case filter */
+    .filter-by {
+        display: none;
+    }
+
+    .filters {
+        position: relative;
+    
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 2rem;
+    }
+
+    .filters img {
+        width: 5rem;
+    }
+
+
+
+    .filters-list {
+        display: none;
+        margin-right: 0.5rem;
+    }
+
+    .case-filter:hover .filters-list  {
+        display: block;
+    }
+
+
+
+        /* case */
+    
+    h5, .price  {
+        font-size: 2rem;
+    }
+
+    h6 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    .case-description-bottom img {
+        width: 4rem;
+    }
+    
+    .stars img {
+        width: 1.5rem;
+    }
+
+    /* footer */
+    footer {
+        margin: 4rem 2rem;
+
+    }
+
+    /* page number */
+    .page-number {
+        padding: 1.5rem 2rem;
+        margin: 0 2.2rem 0 0;
+
+        font-size: 1.5rem;
+    }
+
+}
+
+
+
